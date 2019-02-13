@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -35,14 +36,10 @@ class _HomeState extends State<Home> {
 
   Future<String> _realData() async {
     try {
-
       final file = await _getFile();
       return file.readAsStringSync();
-
     } catch (e) {
-
       return null;
-      
     }
   }
 }
